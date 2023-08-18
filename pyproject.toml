@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "linked-profile-analyser"
+version = "0.1.0"
+description = ""
+authors = ["vaibhavsanap <vabhi42@gmail.com>"]
+readme = "README.md"
+packages = [{include = "linked_profile_analyser"}]
+
+[tool.poetry.dependencies]
+python = "3.11.4"
+langchain = "^0.0.266"
+huggingface-hub = "^0.16.4"
+transformers = "^4.31.0"
+torch = "^2.0.1"
+#gradio = "^3.40.1"
+scrapy = "^2.10.0"
+scrapeops-scrapy = "^0.5.2"
+scrapeops-scrapy-proxy-sdk = "^1.0"
+
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
