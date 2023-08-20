@@ -1,11 +1,17 @@
 from transformers import pipeline
 
+
 classifier = pipeline("zero-shot-classification",
                       model="facebook/bart-large-mnli")
 
-linked_in_profile_to_classify = "Software engineer, java, python"
 
-candidate_labels = ['technical', 'non-technical']
+def classify_user():
+    # JSON file
+    f = open('linkedin_scrapper/profile.json', "r")
+    # Reading from file
+    linked_in_profile_to_classify = f.read()
 
-print(classifier(linked_in_profile_to_classify, candidate_labels))
-
+    candidate_labels = ['technical', 'non-technical']
+    result = classifier(linked_in_profile_to_classify, candidate_labels)
+    print(result['labels'], result['scores'])
+    return result

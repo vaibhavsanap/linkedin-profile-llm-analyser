@@ -2,6 +2,7 @@ import json
 import os
 import scrapy
 
+
 class LinkedInPeopleProfileSpider(scrapy.Spider):
     name = "linkedin_people_profile"
 
@@ -12,7 +13,6 @@ class LinkedInPeopleProfileSpider(scrapy.Spider):
     def start_requests(self):
 
         profile_list = [os.environ["USER_LINKEDIN_ID"]]
-        # profile_list = ['reidhoffman']
         print(profile_list)
         for profile in profile_list:
             linkedin_people_url = f'https://www.linkedin.com/in/{profile}/' 

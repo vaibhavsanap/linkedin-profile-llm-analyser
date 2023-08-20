@@ -2,6 +2,7 @@
 import sys
 import os
 from scrapy.cmdline import execute
+from hugging_face_local_pipeline import classify_user
 
 
 def gen_argv(s):
@@ -15,3 +16,7 @@ if __name__ == '__main__':
     os.chdir("linkedin_scrapper")
     gen_argv('scrapy crawl linkedin_people_profile')
     execute()
+    print("Calling classify user")
+    result = classify_user()
+    print(result)
+
